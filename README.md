@@ -47,7 +47,8 @@ First Step is to configure our application with Admob App Id. This needs to be d
         
 ```        
           using Android.Gms.Ads;
-         MobileAds.Initialize(ApplicationContext, AppConstants.AppId);
+          
+         MobileAds.Initialize(ApplicationContext, '{Your App Id}');
 ```         
 Next Step is to allow permissions for the app in [**AndroidManifest.xml**](https://docs.microsoft.com/en-us/xamarin/android/platform/android-manifest)
 ```        
