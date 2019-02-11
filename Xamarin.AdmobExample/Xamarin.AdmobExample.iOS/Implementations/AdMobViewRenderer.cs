@@ -1,11 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Foundation;
 using Google.MobileAds;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
 using Xamarin.AdmobExample.Controls;
 using Xamarin.AdmobExample.iOS.Implementations;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(AdmobControl), typeof(AdMobViewRenderer))]
 namespace Xamarin.AdmobExample.iOS.Implementations

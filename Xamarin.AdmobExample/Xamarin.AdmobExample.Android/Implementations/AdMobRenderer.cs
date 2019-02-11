@@ -8,7 +8,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(AdmobControl), typeof(AdMobRenderer))]
 namespace Xamarin.AdmobExample.Droid.Implementations
 {
-    public class AdMobRenderer : ViewRenderer<AdmobControl, AdView>
+   public class AdMobRenderer : ViewRenderer<AdmobControl, AdView>
     {
         public AdMobRenderer(Context context) : base(context)
         {

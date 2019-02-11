@@ -4191,9 +4191,6 @@ namespace Xamarin.AdmobExample.Droid
 			// aapt resource value: 0x7f0a0192
 			public const int AppCompatDialogStyle = 2131362194;
 			
-			// aapt resource value: 0x7f0a0193
-			public const int AppFullScreenTheme = 2131362195;
-			
 			// aapt resource value: 0x7f0a00aa
 			public const int Base_AlertDialog_AppCompat = 2131361962;
 			

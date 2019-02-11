@@ -1,4 +1,6 @@
-﻿using Xamarin.AdmobExample.Controls;
+﻿using System;
+using System.Diagnostics;
+using Xamarin.AdmobExample.Controls;
 using Xamarin.Forms;
 
 namespace Xamarin.AdmobExample
@@ -12,14 +14,27 @@ namespace Xamarin.AdmobExample
             {
                 AdUnitId = AppConstants.BannerId
             };
-            Label adLabel = new Label() { Text = "Ads will be displayed here!"};
+            Label adLabel = new Label() { Text = "Ads will be displayed here!" };
+
+            Button showInterstitialAdsButton = new Button();
+            showInterstitialAdsButton.Clicked += ShowInterstitialAdsButton_Clicked;
+            showInterstitialAdsButton.Text = "Show Interstitial Ads";
 
             Content = new StackLayout()
             {
-                Children = { adLabel, admobControl }
+                Children = { adLabel, admobControl, showInterstitialAdsButton }
             };
 
             this.Title = "Admob Page";
+        }
+
+        async void ShowInterstitialAdsButton_Clicked(object sender, EventArgs e)
+        {
+            if (AppConstants.ShowAds)
+            {
+                await DependencyService.Get<IAdmobInterstitialAds>().Display(AppConstants.InterstitialAdId);
+            }
+            Debug.WriteLine("Continue button click implementation");
         }
     }
 }

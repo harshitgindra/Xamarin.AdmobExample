@@ -22,7 +22,7 @@ namespace Xamarin.AdmobExample.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.Forms.Init();
+            global::Xamarin.Forms.Forms.Init();
             Google.MobileAds.MobileAds.Configure(AppConstants.AppId);
             LoadApplication(new App());
 
