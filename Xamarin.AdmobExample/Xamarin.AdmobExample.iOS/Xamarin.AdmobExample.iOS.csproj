@@ -144,15 +144,17 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Xamarin.Build.Download" Version="0.10.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Google.iOS.MobileAds">
-      <Version>7.32.0</Version>
+      <Version>7.53.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

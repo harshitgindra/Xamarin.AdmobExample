@@ -34,5 +34,7 @@
     <string>Xamarin.AdmobExample</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>GADIsAdManagerApp</key>
+    <string>true</string>
 </dict>
 </plist>

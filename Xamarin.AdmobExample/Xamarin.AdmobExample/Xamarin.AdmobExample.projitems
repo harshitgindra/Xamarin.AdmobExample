@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\AdmobControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AppConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IAdmobInterstitialAds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />

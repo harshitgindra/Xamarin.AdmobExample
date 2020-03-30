@@ -19,10 +19,14 @@ namespace Xamarin.AdmobExample
             Button showInterstitialAdsButton = new Button();
             showInterstitialAdsButton.Clicked += ShowInterstitialAdsButton_Clicked;
             showInterstitialAdsButton.Text = "Show Interstitial Ads";
+            
+            Button navigateToPage2Button = new Button();
+            navigateToPage2Button.Clicked += NavigateToPage2_Clicked;
+            navigateToPage2Button.Text = "Go To Page 2";
 
             Content = new StackLayout()
             {
-                Children = { adLabel, admobControl, showInterstitialAdsButton }
+                Children = { adLabel, admobControl, showInterstitialAdsButton , navigateToPage2Button}
             };
 
             this.Title = "Admob Page";
@@ -35,6 +39,11 @@ namespace Xamarin.AdmobExample
                 await DependencyService.Get<IAdmobInterstitialAds>().Display(AppConstants.InterstitialAdId);
             }
             Debug.WriteLine("Continue button click implementation");
+        }
+        
+        async void NavigateToPage2_Clicked(object sender, EventArgs e)
+        {
+            await this.Navigation.PushAsync(new Page2());
         }
     }
 }

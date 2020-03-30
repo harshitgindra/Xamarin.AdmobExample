@@ -11,6 +11,7 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(AdmobControl), typeof(AdMobViewRenderer))]
 namespace Xamarin.AdmobExample.iOS.Implementations
 {
+
     [Protocol]
     public class AdMobViewRenderer : ViewRenderer<AdmobControl, BannerView>
     {
@@ -20,33 +21,50 @@ namespace Xamarin.AdmobExample.iOS.Implementations
             base.OnElementChanged(e);
             if (Control == null)
             {
-                SetNativeControl(CreateBannerView());
+                var bannerView = CreateBannerView();
+                if (bannerView != null)
+                {
+                    SetNativeControl(bannerView);
+                }
             }
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            Control.AdUnitID = Element.AdUnitId;
+
+            //if (e.PropertyName == nameof(BannerView.AdUnitID))
+            if (Control != null)
+            {
+                Control.AdUnitID = Element.AdUnitId;
+            }
         }
 
         private BannerView CreateBannerView()
         {
-            var bannerView = new BannerView(AdSizeCons.SmartBannerPortrait)
+            try
             {
-                AdUnitID = Element.AdUnitId,
-                RootViewController = GetVisibleViewController()
-            };
+                var bannerView = new BannerView(AdSizeCons.SmartBannerPortrait)
+                {
+                    //AdUnitID = AppConstants.BannerId,
+                    AdUnitID = Element.AdUnitId,
+                    RootViewController = GetVisibleViewController()
+                };
 
-            bannerView.LoadRequest(GetRequest());
+                bannerView.LoadRequest(GetRequest());
 
-            Request GetRequest()
-            {
-                var request = Request.GetDefaultRequest();
-                return request;
+                Request GetRequest()
+                {
+                    var request = Request.GetDefaultRequest();
+                    return request;
+                }
+
+                return bannerView;
             }
-
-            return bannerView;
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         private UIViewController GetVisibleViewController()
