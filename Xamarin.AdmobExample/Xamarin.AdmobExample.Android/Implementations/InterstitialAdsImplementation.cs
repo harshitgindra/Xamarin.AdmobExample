@@ -12,7 +12,7 @@ namespace Xamarin.AdmobExample.Droid.Implementations
         public Task Display(string adId)
         {
              var displayTask = new TaskCompletionSource<bool>();
-            InterstitialAd AdInterstitial = new InterstitialAd(context: Forms.Forms.Context)
+            InterstitialAd AdInterstitial = new InterstitialAd(Forms.Forms.Context)
             {
                 AdUnitId = adId
             };

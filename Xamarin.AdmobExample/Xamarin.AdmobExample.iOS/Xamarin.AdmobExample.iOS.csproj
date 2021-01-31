@@ -152,9 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Build.Download" Version="0.10.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
     <PackageReference Include="Xamarin.Google.iOS.MobileAds">
-      <Version>7.53.1</Version>
+      <Version>7.66.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
